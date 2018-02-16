@@ -1,0 +1,96 @@
+using System;
+
+namespace ProgrammingAssignment31
+{
+    class ChangeCounter
+    {
+		public static void Pennies(ref double totalChange)
+		{
+
+			// Defining new variables just used in this method:
+
+			double subtractPennies;
+			int valuePennies = (int)(totalChange / 0.01);
+
+			// Console output displays amount of pennies:
+
+			Console.WriteLine("You will get {0} penny(s) back.", valuePennies);
+
+			// Some math to change the value of totalChange using the values contained in this method:
+
+			subtractPennies = valuePennies * 0.01;
+			totalChange -= subtractPennies;
+		}
+		public static void Nickels(ref double totalChange)
+		{
+
+			// Defining new variables just used in this method:
+
+			double subtractNickels;
+			int valueNickels = (int)(totalChange / 0.05);
+
+			// Console output displays amount of nickels:
+
+			Console.WriteLine("You will get {0} nickel(s) back.", valueNickels);
+
+			// Some math to change the value of totalChange using the values contained in this method:
+
+			subtractNickels = valueNickels * 0.05;
+			totalChange -= subtractNickels;
+		}
+		public static void Dimes(ref double totalChange)
+		{
+
+			// Defining new variables just used in this method:
+
+			double subtractDimes;
+			int valueDimes = (int)(totalChange / 0.10);
+
+			// Console output displays amount of dimes:
+
+            Console.WriteLine("You will get {0} dime(s) back.", valueDimes);
+
+			// Some math to change the value of totalChange using the values contained in this method:
+
+			subtractDimes = valueDimes * 0.10;
+			totalChange -= subtractDimes;
+		}
+        public static void Quarters(ref double totalChange)
+        {
+
+            // Defining new variables just used in this method:
+
+            double subtractQuarters;
+            int valueQuarters = (int)(totalChange / 0.25);
+
+            // Console output displays amount of quarters:
+
+            Console.WriteLine("You will get {0} quarter(s) back.", valueQuarters);
+
+            // Some math to change the value of totalChange using the values contained in this method:
+
+            subtractQuarters = valueQuarters * 0.25;
+            totalChange -= subtractQuarters;
+        }
+        public static void Main(string[] args)
+        {
+
+            // Defining variable
+
+            double totalChange;
+
+            // Prompting for user to input amount of change
+
+            Console.WriteLine("Please input the amount of change you have:");
+            totalChange = Double.Parse(Console.ReadLine());
+
+            // Passing totalChange by reference:
+
+            Quarters(ref totalChange);
+            Dimes(ref totalChange);
+            Nickels(ref totalChange);
+            Pennies(ref totalChange);
+
+        }
+    }
+}
